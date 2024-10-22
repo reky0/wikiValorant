@@ -1,0 +1,35 @@
+/*
+    paleta de colores: https://www.color-hex.com/color-palette/1045638
+*/
+:root {
+    --light-red: #ff4654;
+    --dark-red: #ba3a46;
+    --white: #ffffff;
+    --dark-black: #111111;
+    --black: #111823;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.navbar {
+    background-color: var(--dark-black);
+    margin-bottom: 20vh;
+    margin: 0;
+    height: 10vh;
+}
+
+.nav-link {
+    color: var(--white);
+    font-size: x-large;
+}
+
+.nav-link:hover {
+    color: var(--dark-red);
+}
+
+.active {
+    color: var(--light-red);
+}

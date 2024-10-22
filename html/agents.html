@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>VALORANT WIKI | AGENTES</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/global.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/agents.css'>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='../js/agents.js' type="module"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-sm justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="agents.html">AGENTES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="maps.html">MAPAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gamemodes.html">MODOS DE JUEGO</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div id="agent-picker" class="col-sm-2 col-lg-1"></div>
+
+            <div id="agent-info" class="col-sm-10 col-lg-11">
+                <table>
+                    <tr id="row1">
+                        <td rowspan="1">
+                            <h1 id="agent-name"></h1>
+                        </td>
+                        <td rowspan="2">
+                            <div id="agent-img" class="loading">
+                                <!-- establece como src un gif transparente 1x1px codificado en Basex64 -->
+                                <!-- asi no se vera nada y al cambiar el src se veran las imagenes correspondientes -->
+                                <img id="agent-img-bg"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt=""
+                                    loading="eager">
+                                <img id="agent-img-portrait"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                    alt=""
+                                    loading="eager">
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span id="agent-role"></span>
+                                <img id="agent-role-icon" src="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="row2">
+                        <td>
+                            <p id="agent-description"></p>
+                        </td>
+                        <td id="skills">
+                            <!-- PONER HABILIDADES COMO EN EL JUEGO CON MENU DE PESTAÑAS -->
+                            <!-- BOOTSTRAP TIENE DE ESO -->
+
+                            <div class="skill-tabs">
+                                <!-- Tabs -->
+                                <button class="tab-button" title="Hab. 1" onclick="openTab(event, 'skill1')">
+                                    <img id="skill1-img" src="" alt="">
+                                </button>
+                                <button class="tab-button" title="Hab. 2" onclick="openTab(event, 'skill2')">
+                                    <img id="skill2-img" src="" alt="">
+                                </button>
+                                <button class="tab-button" title="Hab. 3" onclick="openTab(event, 'skill3')">
+                                    <img id="skill3-img" src="" alt="">
+                                </button>
+                                <button class="tab-button" title="Hab. definitiva" onclick="openTab(event, 'ultimate')">
+                                    <img id="ultimate-img" src="" alt="">
+                                </button>
+                            </div>
+
+                            <!-- Tab Content -->
+                            <div id="skill1" class="tab-content">
+                                <h2 id="skill1-name"></h2>
+                                <div id="skill1-desc"></div>
+                            </div>
+
+                            <div id="skill2" class="tab-content" style="display:none;">
+                                <h2 id="skill2-name"></h2>
+                                <div id="skill2-desc"></div>
+                            </div>
+
+                            <div id="skill3" class="tab-content" style="display:none;">
+                                <h2 id="skill3-name"></h2>
+                                <div id="skill3-desc"></div>
+                            </div>
+
+                            <div id="ultimate" class="tab-content" style="display:none;">
+                                <h2 id="ultimate-name">Content for Tab 4</h2>
+                                <p id="ultimate-desc">This is the content for the fourth tab.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab content
+            var i, tabContent, tabButtons;
+
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            // Remove the active class from all tab buttons
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                // tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+
+            // Show the selected tab's content and mark the tab as active
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // By default, display the content of the first tab
+        document.getElementById("skill1").style.display = "block";
+    </script>
+</body>
+
+</html>
